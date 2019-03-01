@@ -2,12 +2,11 @@
 const scores = {
     templateUrl: "app/scores/score.html",
 
-    controller: [function() {
+    controller: ["QuizService", function(QuizService) {
         const vm = this;
-        vm.getScores = function(newName){
-          QuizService.getScores(newName);
-          vm.scores = response.data;
-        }
+          QuizService.getScores().then(function(response) {
+            vm.scores = response.data;
+          })
     }]
 }
 

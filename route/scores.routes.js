@@ -8,9 +8,6 @@ function selectAll(req, res) {
     res.send(result.rows);
   })
 }
-scores.post("/scores", function(req, res) {
-  pool.query("insert into scores (player_name) values ($1::text)", [req.body.player_name]).then(selectAll(req, res));
- });
 
 scores.get("/scores", function(req, res){
   selectAll(req, res);

@@ -6,7 +6,7 @@ function QuizService($http, $location) {
     return $http({
         method: "POST",
         url: "/scores",
-         data: score
+         data: {...score, score: Number(score.score)}
     });
   }
   self.getScores = function(){

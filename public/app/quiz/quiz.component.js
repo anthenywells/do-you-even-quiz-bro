@@ -10,25 +10,26 @@ const quiz = {
       vm.questionlist = response.data;
     })
 
-    vm.total = 0;
-    vm.score = [false, false, false, false, false]
-    vm.check = function (val, ans, idx) {
-      console.log(`${val} ${ans} ${idx}`)
-      if (val == ans) {
-        vm.score[idx] = true;
+    vm.points = 0;
+    vm.choices = [false, false, false, false, false]
+    vm.check = function (choice, answer, idx) {
+      if (choice == answer) {
+        vm.choices[idx] = true;
       } else {
-        vm.score[idx] = false;
+        vm.choices[idx] = false;
       }
-      console.log(vm.score)
     }
-
-    vm.getTotal = function(){
-      for(let i = 0; i <= vm.score.length; i++){
-        if(vm.score[i] == true){
-          vm.total++;
+    vm.getScore = function(score){
+      for(let i = 0; i <= vm.choices.length; i++){
+        if(vm.choices[i] == true){
+          vm.points++;
         } 
-        console.log(vm.total);
-      }
+      } score.score = vm.points;
+      console.log(score.score);
+      console.log(score.player_name);
+      QuizService.addScore(score).then(function(response) {
+        vm.questionlist = response.data;
+      })
     }
 
   }]
