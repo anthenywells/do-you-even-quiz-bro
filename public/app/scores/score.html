@@ -1,11 +1,9 @@
-<div class="scores">
+<div class="score-container">
 
   <section class="heading">
-    <p>Player</p>
-    <p>Score</p>
+    <p>Player Scores</p>
   </section>
-  <section ng-repeat="score in $ctrl.scores">
-    <p> {{score.player_name}} </p>
-    <p> {{score.score}} </p>
+  <section  class="scores" ng-repeat="score in $ctrl.scores">
+    <p> {{score.player_name}}: {{score.score}} </p>
   </section>
 </div>
