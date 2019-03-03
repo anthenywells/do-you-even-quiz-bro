@@ -8,13 +8,11 @@ function selectAll(req, res) {
     res.send(result.rows);
   })
 }
-
 questions.get("/questions", function(req, res){
   selectAll(req, res);
 });
-
 questions.post("/scores", function(req, res) {
-  pool.query("insert into scores (player_name) values ($1::text)", [req.body.player_name]).then(selectAll(req, res));
+  pool.query("insert into scores (player_name, score) values ($1::text, $2::int)", [req.body.player_name, req.body.score])
  });
 
 
