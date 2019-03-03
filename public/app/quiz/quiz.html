@@ -1,28 +1,26 @@
-
-
-<!-- <form ng-submit="$ctrl.addScore(score);"> -->
- 
-    <!-- <button>Submit</button> -->
-<!-- </form> -->
-    <input type="text" ng-model="score.player_name" placeholder="Enter your name">
+<section class="quiz">
+    <input type="text" ng-model="score.player_name" placeholder="Enter your name" class="playerName">
 
     <form ng-repeat="question in $ctrl.questionlist track by $index" ng-model="choice">
-      
-        <p> {{ question.question }}</p>
-        <p>{{ question.choice_one }}
-            <input ng-click="$ctrl.check(question.choice_one, question.answer, $index)" type="radio" value="{{question.choice_one}}" name="choice">
-        </p>
-        <p>{{ question.choice_two }}
-            <input ng-click="$ctrl.check(question.choice_two, question.answer, $index)" type="radio" value="{{question.choice_two}}" name="choice">
-        </p>
-        <p>{{ question.choice_three }}
-            <input ng-click="$ctrl.check(question.choice_three, question.answer, $index)" type="radio" value="{{question.choice_three}}" name="choice">
-        </p>
-        <p>{{ question.choice_four}}
-            <input ng-click="$ctrl.check(question.choice_four, question.answer, $index)" type="radio" value="{{question.choice_four}}" name="choice">
-        </p>
-        
-      </form>
-      <button ng-click="$ctrl.getScore(score)">submit</button>
-
-
+    
+      <p class="heading"> {{ question.question }}</p>
+      <p>{{ question.choice_one }}
+        <input ng-click="$ctrl.check(question.choice_one, question.answer, $index)" type="radio" value="{{question.choice_one}}"
+          name="choice">
+      </p>
+      <p>{{ question.choice_two }}
+        <input ng-click="$ctrl.check(question.choice_two, question.answer, $index)" type="radio" value="{{question.choice_two}}"
+          name="choice">
+      </p>
+      <p>{{ question.choice_three }}
+        <input ng-click="$ctrl.check(question.choice_three, question.answer, $index)" type="radio" value="{{question.choice_three}}"
+          name="choice">
+      </p>
+      <p>{{ question.choice_four}}
+        <input ng-click="$ctrl.check(question.choice_four, question.answer, $index)" type="radio" value="{{question.choice_four}}"
+          name="choice">
+      </p>
+    
+    </form>
+    <button ng-click="$ctrl.getScore(score)" class="getScore">submit</button>
+</section>

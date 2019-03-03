@@ -7,6 +7,7 @@ const scores = {
           QuizService.getScores().then(function(response) {
             vm.scores = response.data;
           })
+          
     }]
 }
 
