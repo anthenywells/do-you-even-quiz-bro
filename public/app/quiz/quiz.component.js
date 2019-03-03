@@ -2,11 +2,11 @@
 const quiz = {
   templateUrl: "app/quiz/quiz.html",
 
-  controller: ["QuizService", function(QuizService) {
+  controller: ["QuizService", "$location", function (QuizService, $location) {
     const vm = this;
     vm.points = null;
 
-    QuizService.getQuestions().then(function(response) {
+    QuizService.getQuestions().then(function (response) {
       vm.questionlist = response.data;
     })
 
@@ -19,22 +19,26 @@ const quiz = {
         vm.choices[idx] = false;
       }
     }
-    vm.getScore = function(score){
-      for(let i = 0; i <= vm.choices.length; i++){
-        if(vm.choices[i] == true){
+    vm.getScore = function (score) {
+      for (let i = 0; i <= vm.choices.length; i++) {
+        if (vm.choices[i] == true) {
           vm.points++;
-        } 
-      } score.score = vm.points;
-      console.log(score.score);
-      console.log(score.player_name);
-      QuizService.addScore(score).then(function(response) {
+        }
+      } 
+      score.score = vm.points;
+      QuizService.addScore(score).then(function (response) {
         vm.questionlist = response.data;
       })
-    }
+      QuizService.getScores().then(function(response) {
+        vm.scores = response.data;
+      $location.path("/scores");     
 
+      })   
+    }
+    
   }]
 }
 
 angular
-.module("QuizModule")
-.component("quiz", quiz);
+  .module("QuizModule")
+  .component("quiz", quiz);
