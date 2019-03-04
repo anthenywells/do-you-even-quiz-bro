@@ -1,149 +1,183 @@
 html {
-    font-family: Heebo;
-        width: 100wh;
-        height: 90vh;
-        background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-        background-size: 400% 400%;
-        -webkit-animation: Gradient 15s ease infinite;
-        -moz-animation: Gradient 15s ease infinite;
-        animation: Gradient 15s ease infinite;
-    }
-    
-    @-webkit-keyframes Gradient {
-        0% {
-            background-position: 0% 50%
-        }
-        50% {
-            background-position: 100% 50%
-        }
-        100% {
-            background-position: 0% 50%
-        }
-    }
-    
-    @-moz-keyframes Gradient {
-        0% {
-            background-position: 0% 50%
-        }
-        50% {
-            background-position: 100% 50%
-        }
-        100% {
-            background-position: 0% 50%
-        }
-    }
-    
-    @keyframes Gradient {
-        0% {
-            background-position: 0% 50%
-        }
-        50% {
-            background-position: 100% 50%
-        }
-        100% {
-            background-position: 0% 50%
-        }
-    }
+  font-family: Heebo;
+  width: 100wh;
+  height: 90vh;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
 
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
 
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
 
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
 
 .quiz {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .playername {
-    margin: 30px;
+  margin: 30px;
+  color: #fff;
+}
 
+.playername::placeholder {
+  color: #f1f1f1;
 }
 
 input {
-    border: 0;
-    outline: 0;
-    background: transparent;
-    border-bottom: 2px solid rgba(255,255,255,.5);
-    font-size: 18px;
-    text-align: center;
-    font-weight: bold;
-  }
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid rgba(255, 255, 255, .5);
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
 
 form {
-width: 400px;
-height: 200px;
-margin-bottom: 15px;
-display: flex;
-flex-direction: column; 
-align-items: center;
-justify-content: space-evenly;
-background-color: aquamarine;
-border-radius: 20px;
-padding: 20px;
-align-content: center;
-Box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  width: 400px;
+  height: 200px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: aquamarine;
+  border-radius: 20px;
+  padding: 20px;
+  align-content: center;
+  Box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.form-radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  background-color: #f1f1f1;
+  color: #666;
+  top: 10px;
+  height: 30px;
+  width: 30px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-right: 7px;
+  outline: none;
+}
+
+.form-radio:checked::before {
+  position: absolute;
+  font: 13px/1 'Open Sans', sans-serif;
+  left: 11px;
+  top: 7px;
+  content: '\02143';
+  transform: rotate(40deg);
+}
+
+.form-radio:hover {
+  background-color: #f7f7f7;
+}
+
+.form-radio:checked {
+  background-color: #f1f1f1;
 }
 
 .q-style2 {
-    margin-bottom:-20px;
+  margin-bottom: -20px;
 }
 
 .q-style1 {
-    margin-top: -20px;
-    margin-bottom: -30px;
+  margin-top: -20px;
+  margin-bottom: -30px;
 }
-.ww {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
 
-    align-items: flex-start;
+.ww {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
 }
 
 .getScore {
-    /* background-color:  */
+  /* background-color:  */
 }
 
 .scores {
-    width: 200px;
-height: 20px;
-margin-bottom: 15px;
-display: flex;
-flex-direction: column; 
-align-items: center;
-justify-content: space-evenly;
-background-color: aquamarine;
-border-radius: 20px;
-padding: 20px;
-align-content: center;
-Box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  width: 200px;
+  height: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: aquamarine;
+  border-radius: 20px;
+  padding: 20px;
+  align-content: center;
+  Box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .score-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .heading {
-    font-family: Luckiest Guy;
-    font-size: 24px;
-    
+  font-family: Luckiest Guy;
+  font-size: 24px;
 }
 
 .heading2 {
-    font-family: Luckiest Guy;
-    font-size: 36px;
-    -webkit-text-stroke: 1px white;
-
+  font-family: Luckiest Guy;
+  font-size: 36px;
+  -webkit-text-stroke: 1px white;
 }
 
 .getScore {
-    height: 35px;
-    background-color: aquamarine;
-    border: 0px solid;
-    width: 100px;
-    border-radius: 20px;
-    font-family: Luckiest Guy;
-    font-size: 24px;
+  height: 35px;
+  background-color: aquamarine;
+  border: 0px solid;
+  width: 100px;
+  border-radius: 20px;
+  font-family: Luckiest Guy;
+  font-size: 24px;
 }
