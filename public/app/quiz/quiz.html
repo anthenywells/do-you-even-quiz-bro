@@ -2,27 +2,29 @@
   <p class="heading2 animated infinite pulse duration-3s slow">
     QUIZ NAME
   </p>
-    <input type="text" ng-model="score.player_name" placeholder="Enter your name" class="playername">
+  <input type="text" ng-model="score.player_name" placeholder="Enter your name" class="playername">
 
-    <form class="animated wobble card" ng-repeat="question in $ctrl.questionlist track by $index" ng-model="choice">
-      <p class="heading q-style1"> {{ question.question }}</p>
-      <div class="ww">
-      <p class="q-style2"><input ng-click="$ctrl.check(question.choice_one, question.answer, $index)" type="radio" value="{{question.choice_one}}"
-        name="choice">{{ question.choice_one }}
-        
+  <form class="animated wobble card" ng-repeat="question in $ctrl.questionlist track by $index" ng-model="choice">
+    <p class="heading q-style1"> {{ question.question }}</p>
+    <div class="ww">
+      <p class="q-style2">
+        <input class="form-radio" ng-click="$ctrl.check(question.choice_one, question.answer, $index)" type="radio"
+          value="{{question.choice_one}}" name="choice">{{ question.choice_one }}
+
       </p>
       <p class="q-style2">
-          <input ng-click="$ctrl.check(question.choice_two, question.answer, $index)" type="radio" value="{{question.choice_two}}"
-            name="choice">{{ question.choice_two }}
+        <input class="form-radio" ng-click="$ctrl.check(question.choice_two, question.answer, $index)" type="radio"
+          value="{{question.choice_two}}" name="choice">{{ question.choice_two }}
       </p>
-      <p class="q-style2"><input ng-click="$ctrl.check(question.choice_three, question.answer, $index)" type="radio" value="{{question.choice_three}}"
-        name="choice">{{ question.choice_three }}
+      <p class="q-style2">
+        <input class="form-radio" ng-click="$ctrl.check(question.choice_three, question.answer, $index)" type="radio"
+          value="{{question.choice_three}}" name="choice">{{ question.choice_three }}
       </p>
-      <p class="q-style2"><input ng-click="$ctrl.check(question.choice_four, question.answer, $index)" type="radio" value="{{question.choice_four}}"
-        name="choice">{{ question.choice_four}}
+      <p class="q-style2">
+        <input class="form-radio" ng-click="$ctrl.check(question.choice_four, question.answer, $index)" type="radio"
+          value="{{question.choice_four}}" name="choice">{{ question.choice_four}}
       </p>
     </div>
-    </form>
-    <button ng-click="$ctrl.getScore(score)" class="getScore">submit</button>
+  </form>
+  <button ng-click="$ctrl.getScore(score)" class="getScore">submit</button>
 </section>
-
